@@ -1,8 +1,10 @@
 package org.launchcode.javawebdevtechjobspersistent.models;
 
+import javax.persistence.MappedSuperclass;
+
 import java.util.Objects;
 
-
+@MappedSuperclass
 public abstract class AbstractEntity {
 
     private int id;
