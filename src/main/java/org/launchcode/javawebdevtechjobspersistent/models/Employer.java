@@ -1,14 +1,14 @@
 package org.launchcode.javawebdevtechjobspersistent.models;
 
 import javax.persistence.Entity;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 @Entity
 public class Employer extends AbstractEntity {
 
-    @NotNull(message = "A location is required.")
-    @Size(min = 1, max = 200, message = "The location entered is longer than 200 character limit.")
+    @NotBlank(message = "A location is required.")
+    @Size(max = 50, message = "The location entered is longer than 50 character limit.")
     public String location;
 
     public Employer() {}
