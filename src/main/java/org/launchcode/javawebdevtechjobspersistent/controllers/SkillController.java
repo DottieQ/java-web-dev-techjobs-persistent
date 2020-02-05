@@ -22,7 +22,6 @@ public class SkillController {
     @GetMapping("add")
     public String displayAddSkillForm(Model model) {
         model.addAttribute(new Skill());
-  //      model.addAttribute("skills", skillRepository.findAll());
         return "skills/add";
     }
 
@@ -35,7 +34,8 @@ public class SkillController {
             return "skills/add";
         }
         skillRepository.save(newSkill);
-        return "skills/view";
+        model.addAttribute("skills", skillRepository.findAll());
+        return "redirect:../";
     }
 
     @GetMapping("view/{skillId}")
