@@ -77,7 +77,8 @@ public class HomeController {
     public String displayViewJob(Model model, @PathVariable int jobId) {
 
         Optional<Job> selection = jobRepository.findById(jobId);
-        model.addAttribute("job", selection);
+        Job newJob = selection.get();
+        model.addAttribute("job", newJob);
 
         return "view";
     }
