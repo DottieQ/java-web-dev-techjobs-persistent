@@ -63,7 +63,6 @@ public class HomeController {
 
             Employer result = selection.get();
             newJob.setEmployer(result);
-      //      jobRepository.save(newJob);
 
             List<Skill> skillObjs = (List<Skill>) skillRepository.findAllById(skills);
 
