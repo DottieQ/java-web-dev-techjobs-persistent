@@ -13,11 +13,9 @@ import java.util.List;
 @Entity
 public class Employer extends AbstractEntity {
 
-    @OneToMany
-
-            //(fetch = FetchType.LAZY, mappedBy = "employer")
-            // (mappedBy = "employer")
-    @JoinColumn
+    @OneToMany(mappedBy = "employer")
+    //  @NotNull(message = "Please add an employer.")
+   // @JoinColumn
     private final List<Job> jobs = new ArrayList<>();
 
 
